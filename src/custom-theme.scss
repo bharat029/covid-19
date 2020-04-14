@@ -12,14 +12,14 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$covid-primary: mat-palette($mat-indigo);
-$covid-accent: mat-palette($mat-pink, A200, A100, A400);
+$covid-primary: mat-palette($mat-deep-purple);
+$covid-accent: mat-palette($mat-pink);
 
 // The warn palette is optional (defaults to red).
 $covid-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$covid-theme: mat-light-theme($covid-primary, $covid-accent, $covid-warn);
+$covid-theme: mat-dark-theme($covid-primary, $covid-accent, $covid-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component

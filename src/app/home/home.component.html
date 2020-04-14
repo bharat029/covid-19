@@ -1,1 +1,6 @@
-<p>home works!</p>
+<h2>Global Stats</h2>
+<mat-divider></mat-divider>
+<div *ngIf="summary$ |async as summary">
+  Updated At: {{ getTime(summary.Date) }}
+  <app-global-stats [stats]="summary.Global"></app-global-stats>
+</div>

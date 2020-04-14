@@ -1,0 +1,29 @@
+.stats {
+  margin: 2rem 1rem;
+}
+.stat {
+  border-radius: 10px;
+  background: #505050;
+  text-align: center;
+}
+.stat h3 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 0.25rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.stat div {
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+.new-cases h3 {
+  background: blue;
+  color: black;
+}
+.deaths h3 {
+  background: red;
+}
+.recoveries h3 {
+  background: green;
+}

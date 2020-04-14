@@ -1,0 +1,33 @@
+<div class="stats" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="mat-elevation-z5 stat new-cases" fxFlex="20">
+      <h3 color="accent">Newly Confirmed Cases</h3>
+      <div>{{ stats.NewConfirmed |number }}</div>
+    </div>
+
+    <div class="mat-elevation-z5 stat new-cases" fxFlex="20">
+      <h3 color="accent">Total Confirmed Cases</h3>
+      <div>{{ stats.TotalConfirmed |number }}</div>
+    </div>
+
+    <div class="mat-elevation-z5 stat deaths" fxFlex="20">
+      <h3 color="accent">New Deaths</h3>
+      <div>{{ stats.NewDeaths |number }}</div>
+    </div>
+
+    <div class="mat-elevation-z5 stat deaths" fxFlex="20">
+      <h3 color="accent">Total Deaths</h3>
+      <div>{{ stats.TotalDeaths |number }}</div>
+    </div>
+  </div>
+
+  <div class="stats" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="7%">
+    <div class="mat-elevation-z5 stat recoveries" fxFlex="20">
+      <h3 color="accent">Newly Recovered</h3>
+      <div>{{ stats.NewRecovered |number }}</div>
+    </div>
+
+    <div class="mat-elevation-z5 stat recoveries" fxFlex="20">
+      <h3 color="accent">Total Recovered</h3>
+      <div>{{ stats.TotalRecovered |number }}</div>
+    </div>
+  </div>
