@@ -10,15 +10,17 @@ import { MaterialModule } from './material/material.module';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
-import { CovidState } from './store/state/covid.state';
+import { CovidState } from './store/covid/covid.state';
 import { environment } from 'src/environments/environment.prod';
 import { GlobalStatsComponent } from './global-stats/global-stats.component';
+import { CountriesSummaryComponent } from './countries-summary/countries-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     GlobalStatsComponent,
+    CountriesSummaryComponent,
   ],
   imports: [
     BrowserModule,

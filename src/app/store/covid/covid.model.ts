@@ -21,11 +21,11 @@ export interface ICountry {
   TotalDeaths: number,
   NewRecovered: number,
   TotalRecovered: number,
-  Date: Date,
+  Date: string,
 }
 
 export interface ISummary {
   Global: IGlobal,
   Countries: ICountry[],
-  Date: Date,
+  Date: string,
 }

@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
+import { ISummary } from './store/covid/covid.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class CovidService {
 
   constructor(private http: HttpClient) { }
 
-  getSummary(): Observable<any> {
-    return this.http.get(this._url + 'summary').pipe(
+  getSummary(): Observable<ISummary> {
+    return this.http.get<ISummary>(this._url + 'summary').pipe(
       catchError(this.errorHandler)
     );
   }

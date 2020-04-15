@@ -1,0 +1,12 @@
+<h2>Countries Summary</h2>
+<mat-divider></mat-divider>
+<mat-list>
+  <mat-list-item *ngFor="let country of stats; let i=index">
+    <div class="country" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="truncate" fxFlex="25" fxFlex.lt-sm="40">{{ i + 1 }}. <span>{{ country.Country }}</span></div>
+      <div fxFlex="10" fxFlex.lt-sm="20"><div>Confirmed</div><div>{{ country.TotalConfirmed |number }}</div></div>
+      <div fxFlex="10" fxFlex.lt-sm="20"><div>Deaths</div><div>{{ country.TotalDeaths |number }}</div></div>
+      <div fxFlex="10" fxFlex.lt-sm="20"><div>Recovered</div><div>{{ country.TotalRecovered |number }}</div></div>
+    </div>
+  </mat-list-item>
+</mat-list>

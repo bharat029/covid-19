@@ -17,6 +17,14 @@
   padding: 2rem 0;
   font-size: 2rem;
 }
+@media only screen and (max-width: 600px) {
+  .new-cases, .deaths {
+    margin-top: 1rem;
+  }
+  .stats {
+    margin: 1rem 0.5rem;
+  }
+}
 .new-cases h3 {
   background: blue;
   color: black;

@@ -1,0 +1,45 @@
+.mat-list {
+  padding: 0 1rem;
+}
+.country {
+  width: 100%;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+@media only screen and (max-width: 600px) {
+  .mat-list {
+    padding: 0;
+  }
+  .country {
+    font-size: 0.8rem;
+  }
+}
+.country > div {
+  position: relative;
+}
+.country > div:first-child > span {
+  padding-left: 1rem;
+}
+.country > div > div:first-child {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  font-size: 0.9rem;
+}
+@media only screen and (max-width: 600px) {
+  .country > div > div:first-child {
+    font-size: 0.55rem;
+  }
+  .country > div:first-child > span {
+    padding-left: 0.5rem;
+  }
+}
+.country > div > div:last-child {
+  text-align: right;
+  padding: 1.5rem 0 0.5rem 0;
+}
+.truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
