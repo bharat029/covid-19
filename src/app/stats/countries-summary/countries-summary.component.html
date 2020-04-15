@@ -1,4 +1,12 @@
-<h2>Countries Summary</h2>
+<div fxLayout="row">
+  <h2 style="flex: 1;">Countries Summary</h2>
+  <button color="accent" mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon> Sort</button>
+  <mat-menu #menu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="sort('Confirmed')">Confirmed</button>
+    <button mat-menu-item (click)="sort('Deaths')">Deaths</button>
+    <button mat-menu-item (click)="sort('Recovered')">Recovered</button>
+  </mat-menu>
+</div>
 <mat-divider></mat-divider>
 <mat-list>
   <mat-list-item *ngFor="let country of stats; let i=index">

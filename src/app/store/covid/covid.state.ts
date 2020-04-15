@@ -1,5 +1,5 @@
 import { State, Select, Action, StateContext, Selector } from '@ngxs/store';
-import { CovidService } from '../../covid.service';
+import { CovidService } from '../../core/covid.service';
 import { CovidStateModel } from './covid.model';
 import { GetSummary } from './covid.action';
 import { tap } from 'rxjs/operators';

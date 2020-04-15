@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IGlobal } from '../store/covid/covid.model';
+import { IGlobal } from '../../store/covid/covid.model';
 
 @Component({
-  selector: 'app-global-stats',
+  selector: 'stats-global-stats',
   templateUrl: './global-stats.component.html',
   styleUrls: ['./global-stats.component.css']
 })
