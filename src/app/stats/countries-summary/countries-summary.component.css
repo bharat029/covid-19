@@ -51,3 +51,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.view-more {
+  margin-top: 2rem;
+}
+.view-more button {
+  display: block;
+  margin: auto;
+}

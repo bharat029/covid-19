@@ -1,8 +1,8 @@
 export interface CovidStateModel {
-  all: IGlobal,
-  countries: ICountry[],
-  india: ICountry,
-  historical: any,
+  all?: IGlobal,
+  countries?: ICountry[],
+  india?: ICountry,
+  historical?: IHistoricalCountry[],
 }
 
 export interface IGlobal {
@@ -45,4 +45,16 @@ export interface ICountryInfo {
   lat: number,
   long: number,
   flag: string,
+}
+
+export interface IHistoricalCountry {
+  country: string,
+  province?: string,
+  timeline: IHistoricalArr,
+}
+
+export interface IHistoricalArr {
+  cases: Array<any>,
+  deaths: Array<any>,
+  recovered: Array<any>,
 }

@@ -9,7 +9,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { CovidState } from './store/covid/covid.state';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { CoreModule } from './core/core.module';
 import { StatsModule } from './stats/stats.module';
 
@@ -24,7 +24,7 @@ import { StatsModule } from './stats/stats.module';
     HttpClientModule,
     NgxsModule.forRoot([
       CovidState
-    ], { developmentMode: environment.production }),
+    ], { developmentMode: !environment.production }),
     // NgxsReduxDevtoolsPluginModule.forRoot(),
     // NgxsLoggerPluginModule.forRoot(),
     CoreModule,

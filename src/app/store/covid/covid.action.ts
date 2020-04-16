@@ -1,11 +1,15 @@
 export class GetAll {
-    static readonly type = '[Home API] GetAll]';
-}
-
-export class GetCountries {
-    static readonly type = '[Home API] GetCountries]';
+    static readonly type = '[Highlights API] GetAll]';
 }
 
 export class GetIndiaStats {
-    static readonly type = '[Home API] GetIndiaStats]';
+    static readonly type = '[Highlights API] GetIndiaStats]';
+}
+
+export class GetCountries {
+    static readonly type = '[CountriesSummary API] GetCountries]';
+}
+
+export class GetHistorical {
+    static readonly type = '[CountriesSummary API] GetHistorical]';
 }
