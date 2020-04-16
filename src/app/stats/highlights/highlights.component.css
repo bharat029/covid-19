@@ -1,3 +1,10 @@
+h2 {
+  font-weight: bold;
+}
+#global, #india {
+  font-weight: bold;
+  text-align: center;
+}
 .stats {
   margin: 2rem 1rem;
 }
@@ -7,7 +14,7 @@
   text-align: center;
   color: white;
 }
-.stat h3 {
+.stat h4 {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 0.25rem;
@@ -19,20 +26,21 @@
   font-size: 2rem;
 }
 @media only screen and (max-width: 600px) {
-  .new-cases, .deaths {
-    margin-top: 1rem;
-  }
   .stats {
     margin: 1rem 0.5rem;
   }
+  .stat div {
+    padding: 1rem 0;
+    font-size: 1.15rem;
+  }
 }
-.new-cases h3 {
+.new-cases h4 {
   background: blue;
   color: black;
 }
-.deaths h3 {
+.deaths h4 {
   background: red;
 }
-.recoveries h3 {
+.recovered h4 {
   background: green;
 }

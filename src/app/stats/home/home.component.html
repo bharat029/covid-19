@@ -1,10 +1,3 @@
-<h2>Global Stats</h2>
-<mat-divider></mat-divider>
-<div *ngIf="summary$ |async as summary; else loading">
-  Updated At: {{ getTime(summary.Date) }}
-  <stats-global-stats [stats]="summary.Global"></stats-global-stats>
-  <stats-countries-summary [stats]="summary.Countries"></stats-countries-summary>
-</div>
-<ng-template #loading>
-  <app-loading-spinner></app-loading-spinner>
-</ng-template>
+<stats-highlights></stats-highlights>
+<br><br>
+<stats-countries-summary></stats-countries-summary>

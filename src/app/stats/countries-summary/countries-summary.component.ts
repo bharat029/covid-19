@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICountry } from '../../store/covid/covid.model';
+import { Select, Store } from '@ngxs/store';
+import { CovidState } from 'src/app/store/covid/covid.state';
+import { Observable } from 'rxjs';
+import { GetCountries } from 'src/app/store/covid/covid.action';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'stats-countries-summary',
@@ -7,30 +12,38 @@ import { ICountry } from '../../store/covid/covid.model';
   styleUrls: ['./countries-summary.component.css']
 })
 export class CountriesSummaryComponent implements OnInit {
-  @Input('stats') public stats: ICountry[];
+  @Select(CovidState.getCountries) countries$: Observable<ICountry[]>;
+  public sortedCountries$: Observable<ICountry[]>;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new GetCountries());
     this.sort('Confirmed');
   }
 
   sort(sortBy: string) {
     switch (sortBy) {
       case 'Confirmed':
-        this.stats = this.stats.slice().sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
+        this.sortedCountries$ = this.countries$.pipe(
+          map(countries => countries && countries.slice().sort((a, b) => b.cases - a.cases))
+        );
         break;
     
       case 'Deaths':
-        this.stats = this.stats.slice().sort((a, b) => b.TotalDeaths - a.TotalDeaths);
+        this.sortedCountries$ = this.countries$.pipe(
+          map(countries => countries && countries.slice().sort((a, b) => b.deaths - a.deaths))
+        );
         break;
     
       case 'Recovered':
-        this.stats = this.stats.slice().sort((a, b) => b.TotalRecovered - a.TotalRecovered);
+        this.sortedCountries$ = this.countries$.pipe(
+          map(countries => countries && countries.slice().sort((a, b) => b.recovered - a.recovered))
+        );
         break;
     
       default:
-        this.stats = this.stats.slice().sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
+        // this.stats = this.stats.slice().sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
         break;
     }
   }

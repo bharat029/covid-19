@@ -1,0 +1,41 @@
+<h2>Highlights</h2>
+<mat-divider></mat-divider>
+<h3 id="global">Global</h3>
+<div class="stats" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="all$ | async as all; else loading">
+  <div class="mat-elevation-z5 stat new-cases" fxFlex="30" fxFlex.lt-sm="32">
+    <h4>Confirmed</h4>
+    <div>{{ all.cases |number }}</div>
+  </div>
+
+  <div class="mat-elevation-z5 stat deaths" fxFlex="30" fxFlex.lt-sm="32">
+    <h4>Deaths</h4>
+    <div>{{ all.deaths |number }}</div>
+  </div>
+
+  <div class="mat-elevation-z5 stat recovered" fxFlex="30" fxFlex.lt-sm="32">
+    <h4>Recovered</h4>
+    <div>{{ all.recovered |number }}</div>
+  </div>
+</div>
+
+<h3 id="india">India</h3>
+<div class="stats" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="india$ |async as india; else loading">
+  <div class="mat-elevation-z5 stat new-cases" fxFlex="30" fxFlex.lt-sm="32">
+    <h4>Confirmed</h4>
+    <div>{{ india.cases |number }}</div>
+  </div>
+
+  <div class="mat-elevation-z5 stat deaths" fxFlex="30" fxFlex.lt-sm="32">
+    <h4>Deaths</h4>
+    <div>{{ india.deaths |number }}</div>
+  </div>
+
+  <div class="mat-elevation-z5 stat recovered" fxFlex="30" fxFlex.lt-sm="32">
+    <h4>Recovered</h4>
+    <div>{{ india.recovered |number }}</div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <app-loading-spinner></app-loading-spinner>
+</ng-template>
