@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Covid-19 Meter</title>
+  <title>Covid-19 Home</title>
   <meta name="description" content="Get the latest on the Corona Virus spread.">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,5 +12,24 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+  <script data-ad-client="ca-pub-6309795237365331" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-performance.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCf4loKYo69JqxCynqcQVwxsJYUFboe1QQ",
+      authDomain: "covid-stats-908a2.firebaseapp.com",
+      databaseURL: "https://covid-stats-908a2.firebaseio.com",
+      projectId: "covid-stats-908a2",
+      storageBucket: "covid-stats-908a2.appspot.com",
+      messagingSenderId: "769709923761",
+      appId: "1:769709923761:web:7c1b09c8cb51169f1ab190",
+      measurementId: "G-Y6M3Z266WN"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    firebase.performance();
+  </script>
 </body>
 </html>

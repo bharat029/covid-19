@@ -54,7 +54,7 @@ export interface IHistoricalCountry {
 }
 
 export interface IHistoricalArr {
-  cases: Array<any>,
-  deaths: Array<any>,
-  recovered: Array<any>,
+  cases: any,
+  deaths: any,
+  recovered: any,
 }
