@@ -3,7 +3,7 @@ import { IGlobal, ICountry } from '../../store/covid/covid.model';
 import { Select, Store } from '@ngxs/store';
 import { CovidState } from 'src/app/store/covid/covid.state';
 import { Observable } from 'rxjs';
-import { GetAll, GetIndiaStats } from 'src/app/store/covid/covid.action';
+import { GetAll, GetIndiaStats, RefreshAll } from 'src/app/store/covid/covid.action';
 
 @Component({
   selector: 'stats-highlights',
@@ -19,5 +19,9 @@ export class HighlightsComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new GetAll());
     this.store.dispatch(new GetIndiaStats());
+  }
+  
+  refresh(): void {
+    this.store.dispatch(new RefreshAll());
   }
 }

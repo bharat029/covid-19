@@ -1,4 +1,5 @@
 export interface CovidStateModel {
+  darkTheme: boolean,
   all?: IGlobal,
   countries?: ICountry[],
   india?: ICountry,

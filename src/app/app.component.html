@@ -1,10 +1,13 @@
-<mat-sidenav-container class="mat-typography">
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <h1>Covid-19 Home</h1>
-    </mat-toolbar>
-    <div class="main">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="mat-typography" [class.dark-theme]="darkTheme">
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+      <mat-toolbar class="position-fixed" [color]="darkTheme ? 'inherit': 'primary'">
+        <h1>Covid-19 Home</h1>
+        <button mat-icon-button (click)="toggleTheme()"><mat-icon>{{ !darkTheme ? 'brightness_4': 'brightness_7' }}</mat-icon></button>
+      </mat-toolbar>
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

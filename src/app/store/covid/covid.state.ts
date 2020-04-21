@@ -3,14 +3,22 @@ import { CovidService } from '../../core/covid.service';
 import { CovidStateModel } from './covid.model';
 import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { GetAll, GetCountries, GetIndiaStats, GetHistorical } from './covid.action';
+import { GetAll, GetCountries, GetIndiaStats, GetHistorical, RefreshAll, ToggleTheme } from './covid.action';
 
 @State<CovidStateModel>({
   name: 'covid',
+  defaults: {
+    darkTheme: localStorage.getItem('dark-theme') === 'true',
+  }
 })
 @Injectable()
 export class CovidState {
-  constructor(private covidService: CovidService) {}
+  constructor(private covidService: CovidService) { }
+
+  @Selector()
+  static getDarkTheme(state: CovidStateModel) {
+    return state.darkTheme;
+  }
 
   @Selector()
   static getAll(state: CovidStateModel) {
@@ -66,5 +74,21 @@ export class CovidState {
         patchState({ historical });
       })
     );
+  }
+
+  @Action(RefreshAll)
+  refreshAll({ dispatch }: StateContext<CovidStateModel>) {
+    dispatch(new GetAll());
+    dispatch(new GetIndiaStats());
+    dispatch(new GetCountries());
+    dispatch(new GetHistorical());
+  }
+
+  @Action(ToggleTheme)
+  toggleTheme({ getState, patchState }: StateContext<CovidStateModel>) {
+    localStorage.setItem('dark-theme', '' + !getState().darkTheme );
+    patchState({
+      darkTheme: !getState().darkTheme,
+    });
   }
 }

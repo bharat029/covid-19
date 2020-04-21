@@ -13,3 +13,11 @@ export class GetCountries {
 export class GetHistorical {
     static readonly type = '[CountriesSummary API] GetHistorical]';
 }
+
+export class RefreshAll {
+    static readonly type = '[Highlights API] RefreshAll]';
+}
+
+export class ToggleTheme {
+    static readonly type = '[App Component] ToggleTheme]';
+}

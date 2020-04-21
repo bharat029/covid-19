@@ -20,9 +20,16 @@ $covid-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $covid-theme: mat-light-theme($covid-primary, $covid-accent, $covid-warn);
+$covid-dark-theme: mat-dark-theme($covid-primary, $covid-accent, $covid-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($covid-theme);
 
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.dark-theme {
+  @include angular-material-theme($covid-dark-theme);
+}

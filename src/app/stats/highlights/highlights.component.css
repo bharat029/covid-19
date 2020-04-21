@@ -1,6 +1,10 @@
 h2 {
   font-weight: bold;
 }
+.updated-at {
+  font-weight: bold;
+  margin-top: -1rem;
+}
 #global, #india {
   font-weight: bold;
   text-align: center;

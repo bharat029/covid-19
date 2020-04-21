@@ -6,6 +6,6 @@ h1, h2, h3, h4 , h5, h6 {
   margin: 0 !important;
 }
 .mat-divider {
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 0.5px solid inherit;
   margin-bottom: 2rem !important;
 }

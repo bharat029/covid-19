@@ -1,5 +1,11 @@
-<h2>Highlights</h2>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h2>Highlights</h2>
+  <button mat-fab (click)="refresh()"><mat-icon>refresh</mat-icon></button>
+</div>
 <mat-divider></mat-divider>
+<div fxLayout="row" fxLayoutAlign="end center">
+  <small class="updated-at" *ngIf="all$ |async as all">Last Updated: {{ all.updated |date:'MMM d, h:mm a' }}</small>
+</div>
 <h3 id="global">Global</h3>
 <div class="stats" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="all$ | async as all; else loading">
   <div class="mat-elevation-z5 stat new-cases" fxFlex="30" fxFlex.lt-sm="32">
@@ -25,13 +31,13 @@
   <div class="mat-elevation-z5 stat new-cases" fxFlex="30" fxFlex.lt-sm="32">
     <h4>Confirmed</h4>
     <div>{{ india.cases |number }}</div>
-    <span>+{{ india.todayCases |number }} today.</span>
+    <span *ngIf="india.todayCases > 0">+{{ india.todayCases |number }} today.</span>
   </div>
 
   <div class="mat-elevation-z5 stat deaths" fxFlex="30" fxFlex.lt-sm="32">
     <h4>Deaths</h4>
     <div>{{ india.deaths |number }}</div>
-    <span>+{{ india.todayDeaths |number }} today.</span>
+    <span *ngIf="india.todayCases > 0">+{{ india.todayDeaths |number }} today.</span>
   </div>
 
   <div class="mat-elevation-z5 stat recovered" fxFlex="30" fxFlex.lt-sm="32">

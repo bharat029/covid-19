@@ -1,14 +1,21 @@
 .mat-sidenav-container {
   height: 100vh;
 }
+.mat-toolbar {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .mat-toolbar h1 {
-  width: 100%;
-  text-align: center;
-  font-size: 3rem;
+  flex: 1;
+  font-size: 2.5rem;
 }
 .main {
   width: 90%;
   margin: auto;
+  margin-top: 48px;
   padding: 2rem 0;
 }
 .main h2 {
