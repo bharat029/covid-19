@@ -1,7 +1,16 @@
 <div class="mat-typography" [class.dark-theme]="darkTheme">
   <mat-sidenav-container>
+    <mat-sidenav mode="side" [opened]="sidenavOpened">
+      <h2>Checkout</h2>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <a [routerLink]="[ '/' ]" (click)="toggleSidenav()" mat-list-item><mat-icon>home</mat-icon><span>Home</span><mat-icon>chevron_right</mat-icon></a>
+        <a [routerLink]="[ '/stories' ]" (click)="toggleSidenav()" mat-list-item><mat-icon>people</mat-icon><span>Stories</span><mat-icon>chevron_right</mat-icon></a>
+      </mat-list>
+    </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar class="position-fixed" [color]="darkTheme ? 'inherit': 'primary'">
+        <button mat-icon-button  [class.hide]="sidenavOpened" (click)="toggleSidenav()"><mat-icon>menu</mat-icon></button>
         <h1>Covid-19 Home</h1>
         <button mat-icon-button (click)="toggleTheme()"><mat-icon>{{ !darkTheme ? 'brightness_4': 'brightness_7' }}</mat-icon></button>
       </mat-toolbar>

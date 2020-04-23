@@ -1,12 +1,33 @@
 .mat-sidenav-container {
   height: 100vh;
 }
+.mat-sidenav {
+  width: 240px;
+}
+.mat-sidenav h2 {
+  padding: 1rem;
+  text-align: center;
+}
+.mat-list-item:first-child {
+  border-top: 0.5px solid grey;
+}
+.mat-list-item {
+  text-decoration: none;
+  border-bottom: 0.5px solid grey;
+}
+.mat-list-item span, .mat-expansion-panel-header span {
+  margin-left: 1rem;
+  margin-right: auto;
+}
 .mat-toolbar {
   position: fixed;
   z-index: 2;
   display: flex;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.mat-toolbar button:first-child {
+  margin-right: 1rem;
 }
 .mat-toolbar h1 {
   flex: 1;

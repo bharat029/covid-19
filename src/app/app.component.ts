@@ -12,6 +12,7 @@ import { ToggleTheme } from './store/covid/covid.action';
 export class AppComponent { 
   @Select(CovidState.getDarkTheme) darkTheme$: Observable<boolean>;
   public darkTheme: boolean = true;
+  public sidenavOpened: boolean = false;
 
   constructor(private store: Store) { }
 
@@ -21,5 +22,9 @@ export class AppComponent {
   
   toggleTheme(): void {
     this.store.dispatch(new ToggleTheme());
+  }
+
+  toggleSidenav(): void {
+    this.sidenavOpened = !this.sidenavOpened;
   }
 }

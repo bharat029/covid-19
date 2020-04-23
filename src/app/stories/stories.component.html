@@ -1,0 +1,17 @@
+<h2>Recovery Stories</h2>
+<mat-divider></mat-divider>
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch" *ngIf="stories$ |async as stories">
+  <mat-card *ngFor="let story of stories; let idx=index" fxFlex.gt-xs="30" fxFlex="100">
+    <mat-card-header>
+      <mat-card-title>{{ story.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="story.imgUrl" alt="">
+    <mat-card-content>
+      <p>{{ story.desc }}</p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <a mat-button [routerLink]="[ '/stories', idx ]">Read More</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

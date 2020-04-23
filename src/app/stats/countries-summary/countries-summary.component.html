@@ -1,12 +1,7 @@
-<h2>Corona Virus Spread in <b>India</b></h2>
-<mat-divider></mat-divider>
-<stats-chart [stats]="indiaStats"></stats-chart>
-
-
 <div fxLayout="row">
   <h2 style="flex: 1;">Countries Summary</h2>
-  <button color="accent" mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon> Sort</button>
-  <mat-menu #menu="matMenu" xPosition="before">
+  <button color="accent" mat-raised-button [matMenuTriggerFor]="sortMenu"><mat-icon>sort</mat-icon> Sort</button>
+  <mat-menu #sortMenu="matMenu" xPosition="before">
     <button mat-menu-item (click)="sort('Confirmed')">Confirmed</button>
     <button mat-menu-item (click)="sort('Deaths')">Deaths</button>
     <button mat-menu-item (click)="sort('Recovered')">Recovered</button>

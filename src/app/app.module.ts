@@ -12,6 +12,7 @@ import { CovidState } from './store/covid/covid.state';
 import { environment } from 'src/environments/environment';
 import { CoreModule } from './core/core.module';
 import { StatsModule } from './stats/stats.module';
+import { StoriesState } from './store/stories/stories.state';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { StatsModule } from './stats/stats.module';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxsModule.forRoot([
-      CovidState
+      CovidState, StoriesState
     ], { developmentMode: !environment.production }),
     // NgxsReduxDevtoolsPluginModule.forRoot(),
     // NgxsLoggerPluginModule.forRoot(),

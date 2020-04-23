@@ -13,9 +13,8 @@ import { map, count } from 'rxjs/operators';
 })
 export class CountriesSummaryComponent implements OnInit {
   @Select(CovidState.getCountries) countries$: Observable<ICountry[]>;
-  @Select(CovidState.getHistorical) historical$: Observable<IHistoricalCountry[]>;
   public sortedCountries$: Observable<ICountry[]>;
-  public indiaStats = { confirmed: [], deaths: [], recovered: [], labels: [] };
+  public stats;
   public showOnly: number = 25;
   public sortBy: string = 'Confirmed';
 
@@ -23,23 +22,7 @@ export class CountriesSummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(new GetCountries());
-    this.store.dispatch(new GetHistorical());
     this.sort(this.sortBy);
-    this.historical$.subscribe(countries => {
-      if (countries) {
-        let stats = countries.find(country => country.country === 'India').timeline;
-        
-        Object.keys(stats.cases).forEach(key => {
-          let date = new Date(key);
-
-          this.indiaStats.labels.push(date.toDateString().slice(4, -4));
-
-          this.indiaStats.confirmed.push(stats.cases[key]);
-          this.indiaStats.deaths.push(stats.deaths[key]);
-          this.indiaStats.recovered.push(stats.recovered[key]);
-        });
-      }
-    });
   }
 
   sort(sortBy: string) {

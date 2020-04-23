@@ -1,0 +1,7 @@
+<ng-container *ngIf="stories$ |async as stories">
+    <h1>{{ stories[id].title }}</h1>
+    <mat-divider></mat-divider>
+    <img [src]="stories[id].imgUrl" alt="">
+    <p *ngFor="let para of stories[id].paras">{{ para }}</p>
+    
+</ng-container>

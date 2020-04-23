@@ -14,35 +14,35 @@ export class CovidService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<IGlobal> {
-    // return of(<IGlobal> JSON.parse(localStorage.getItem('all')));
-    return this.http.get<IGlobal>(this._url + 'v2/all').pipe(
-      // tap(res => localStorage.setItem('all', JSON.stringify(res))),
-      catchError(this.errorHandler)
-    );
+    return of(<IGlobal> JSON.parse(localStorage.getItem('all')));
+    // return this.http.get<IGlobal>(this._url + 'v2/all').pipe(
+    //   tap(res => localStorage.setItem('all', JSON.stringify(res))),
+    //   catchError(this.errorHandler)
+    // );
   }
 
   getCountries(): Observable<ICountry[]> {
-    // return of(<ICountry[]> JSON.parse(localStorage.getItem('countries')));
-    return this.http.get<ICountry[]>(this._url + 'v2/countries').pipe(
-      // tap(res => localStorage.setItem('countries', JSON.stringify(res))),
-      catchError(this.errorHandler)
-    );
+    return of(<ICountry[]> JSON.parse(localStorage.getItem('countries')));
+    // return this.http.get<ICountry[]>(this._url + 'v2/countries').pipe(
+    //   tap(res => localStorage.setItem('countries', JSON.stringify(res))),
+    //   catchError(this.errorHandler)
+    // );
   }
 
   getIndiaStats(): Observable<ICountry> {
-    // return of(<ICountry> JSON.parse(localStorage.getItem('india')));
-    return this.http.get<ICountry>(this._url + 'v2/countries/india').pipe(
-      // tap(res => localStorage.setItem('india', JSON.stringify(res))),
-      catchError(this.errorHandler)
-    );
+    return of(<ICountry> JSON.parse(localStorage.getItem('india')));
+    // return this.http.get<ICountry>(this._url + 'v2/countries/india').pipe(
+    //   tap(res => localStorage.setItem('india', JSON.stringify(res))),
+    //   catchError(this.errorHandler)
+    // );
   }
 
   getHistorical(): Observable<IHistoricalCountry[]> {
-    // return of(<IHistoricalCountry[]> JSON.parse(localStorage.getItem('historical')));
-    return this.http.get<any>(this._url + 'v2/historical').pipe(
-      // tap(res => localStorage.setItem('historical', JSON.stringify(res))),
-      catchError(this.errorHandler)
-    );
+    return of(<IHistoricalCountry[]> JSON.parse(localStorage.getItem('historical')));
+    // return this.http.get<any>(this._url + 'v2/historical').pipe(
+    //   tap(res => localStorage.setItem('historical', JSON.stringify(res))),
+    //   catchError(this.errorHandler)
+    // );
   }
 
   public errorHandler(error: HttpErrorResponse) {

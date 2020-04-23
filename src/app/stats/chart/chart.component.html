@@ -1,3 +1,19 @@
+<div fxLayout="row">
+  <h2 style="flex: 1;">Over The Past Month</h2>
+  <button color="accent" mat-raised-button [matMenuTriggerFor]="sortMenu">Country<mat-icon>arrow_drop_down</mat-icon></button>
+  <mat-menu #sortMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="getStats('India')">India</button>
+    <button mat-menu-item (click)="getStats('USA')">USA</button>
+    <button mat-menu-item (click)="getStats('Italy')">Italy</button>
+    <button mat-menu-item (click)="getStats('Spain')">Spain</button>
+    <button mat-menu-item (click)="getStats('France')">France</button>
+    <button mat-menu-item (click)="getStats('Germany')">Germany</button>
+    <button mat-menu-item (click)="getStats('UK')">UK</button>
+    <button mat-menu-item (click)="getStats('China')">China</button>
+  </mat-menu>
+</div>
+<mat-divider></mat-divider>
+
 <div class="chart-wrapper">
   <canvas baseChart #chartCanvas
       [datasets]="chartData" 

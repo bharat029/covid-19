@@ -1,0 +1,9 @@
+.chart-wrapper {
+  width: 70%;
+  margin: 0 auto 2.5rem auto;
+}
+@media only screen and (max-width: 599px) {
+  .chart-wrapper {
+    width: 97%;
+  }
+}
